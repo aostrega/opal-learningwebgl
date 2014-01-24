@@ -1,0 +1,7 @@
+= javascript_include_tag @lesson.script_path
+
+%h1 Lesson #{@lesson.id}
+
+%canvas
+
+%p= link_to "Back to index", url_for(action: :index)

@@ -1,0 +1,6 @@
+%h1 WebGL Lessons
+
+%ul
+  - @lessons.each do |lesson|
+    %li
+      = link_to "Lesson #{lesson.id}", url_for(action: :show, id: lesson.id)
