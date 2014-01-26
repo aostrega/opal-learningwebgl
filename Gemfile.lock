@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/opal/opal-browser.git
-  revision: c21d5df36977f65d1b8ecccc2493239061d051c6
-  specs:
-    opal-browser (0.1.0.beta1)
-      opal (>= 0.5.5)
-      paggio
-
-GIT
   remote: git://github.com/opal/opal-jquery.git
   revision: eab45e24ed1128721395d38d7d4b9e84c4427c00
   specs:
@@ -32,6 +24,13 @@ GIT
     opal (0.6.0)
       source_map
       sprockets
+
+PATH
+  remote: ../../forks/opal-browser
+  specs:
+    opal-browser (0.1.0.beta1)
+      opal (>= 0.5.5)
+      paggio
 
 GEM
   remote: https://rubygems.org/

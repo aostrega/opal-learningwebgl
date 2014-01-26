@@ -1,8 +1,8 @@
-require 'browser/canvas'
+require 'browser/webgl_canvas'
 
 $document.on 'dom:load' do
-  canvas = Browser::Canvas.new($document[:canvas])
+  gl = Browser::WebGLCanvas.new($document[:canvas])
 
-  canvas.rect(20, 30, 40, 50)
-  canvas.fill
+  gl.clearColor(0.0, 0.5, 1.0, 1.0)
+  gl.clear(gl.COLOR_BUFFER_BIT)
 end
