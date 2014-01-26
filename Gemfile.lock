@@ -67,6 +67,9 @@ GEM
       source_map
     opal-activesupport (0.0.5)
       opal
+    opal-browser (0.1.0.beta1)
+      opal (>= 0.5.5)
+      paggio
     opal-jquery (0.1.2)
       opal (~> 0.5.0)
     opal-rails (0.6.2)
@@ -83,6 +86,7 @@ GEM
     opal-sprockets (0.3.0)
       opal (~> 0.5.0)
       sprockets
+    paggio (0.2.3)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -137,6 +141,7 @@ PLATFORMS
 DEPENDENCIES
   debugger
   haml-rails
+  opal-browser
   opal-rails
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)
