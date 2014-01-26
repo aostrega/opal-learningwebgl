@@ -1,8 +1,8 @@
-$document.on :DOMContentLoaded do
-  canvas = $document[:canvas]
-  canvas.style.apply {
-    background color: :black
-  }
+require 'browser/canvas'
 
-  puts 'done!'
+$document.on :DOMContentLoaded do
+  canvas = Browser::Canvas.new($document[:canvas])
+
+  canvas.rect(20, 30, 40, 50)
+  canvas.fill
 end
