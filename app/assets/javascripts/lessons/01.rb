@@ -33,11 +33,11 @@ def setup_shaders
   alert "Could not initialize shaders!" unless $shader_program.link_status
   $gl.use_program($shader_program)
 
-  $vertex_postion = $shader_program.attrib(:a_vertex_position)
-  $gl.enable_vertex_attrib_array($vertex_position)
+  $vertex_postion = Attrib.new($shader_program, :a_vertex_position)
+  $vertex_position.enable
 
-  $p_matrix_uniform = $shader_program.uniform(:u_p_matrix)
-  $mv_matrix_uniform = $shader_program.uniform(:u_mv_atrix)
+  $p_matrix_uniform = Uniform.new($shader_program, :u_p_matrix, :matrix_4fv)
+  $mv_matrix_uniform = Uniform.new($shader_program, :u_mv_atrix, :matrix_4fv)
 end
 
 def setup_buffers
@@ -62,8 +62,8 @@ def setup_buffers
 end
 
 def set_matrix_uniforms
-  $p_matrix_uniform.set_matrix_4fv($p_matrix, false)
-  $mv_matrix_uniform.set_matrix_4fv($mv_matrix, false)
+  $p_matrix_uniform.value = $p_matrix
+  $mv_matrix_uniform.value = $mv_matrix
 end
 
 def draw_scene
