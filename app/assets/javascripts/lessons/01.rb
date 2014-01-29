@@ -7,13 +7,13 @@ VERTEX_COUNTS = {
 }
 
 VERTEX_SHADER = <<-glsl
-  attribute vec3 vertex_position;
+  attribute vec3 a_vertex_position;
 
   uniform mat4 u_mv_matrix;
   uniform mat4 u_p_matrix;
 
   void main(void) {
-    gl_Position = u_p_matrix * u_mv_matrix * vec4(vertex_position, 1.0);
+    gl_Position = u_p_matrix * u_mv_matrix * vec4(a_vertex_position, 1.0);
   }
 glsl
 
@@ -33,7 +33,7 @@ def setup_shaders
   alert "Could not initialize shaders!" unless $shader_program.link_status
   $gl.use_program($shader_program)
 
-  $vertex_postion = $shader_program.attrib_location(:vertex_position)
+  $vertex_postion = $shader_program.attrib(:a_vertex_position)
   $gl.enable_vertex_attrib_array($vertex_position)
 
   $p_matrix_uniform = $shader_program.uniform(:u_p_matrix)
@@ -58,7 +58,7 @@ def setup_buffers
      1, -1,  0,
     -1, -1,  0
   ]
-  $gl.buffer_data(:array, vertices, :static_draw)
+  $gl.buffer_data(:array, square_vertices, :static_draw)
 end
 
 def set_matrix_uniforms
