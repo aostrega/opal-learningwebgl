@@ -13,7 +13,7 @@ VERTEX_SHADER = <<-glsl
   uniform mat4 u_p_matrix;
 
   void main(void) {
-    gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+    gl_Position = u_p_matrix * u_mv_matrix * vec4(vertex_position, 1.0);
   }
 glsl
 
@@ -62,8 +62,8 @@ def setup_buffers
 end
 
 def set_matrix_uniforms
-  $p_matrix_uniform.set_4fv($p_matrix, false)
-  $mv_matrix_uniform.set_4fv($mv_matrix, false)
+  $p_matrix_uniform.set_matrix_4fv($p_matrix, false)
+  $mv_matrix_uniform.set_matrix_4fv($mv_matrix, false)
 end
 
 def draw_scene
