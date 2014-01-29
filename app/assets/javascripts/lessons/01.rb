@@ -68,7 +68,7 @@ end
 
 def draw_scene
   $gl.viewport(0, 0, $gl.width, $gl.height)
-  $gl.clear_buffers(:color, :depth)
+  $gl.clear(:color_buffer, :depth_buffer)
 
   $p_matrix.perspective(45, $gl.width / $gl.height, 0.1, 100)
 
