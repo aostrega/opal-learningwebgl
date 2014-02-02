@@ -1,1 +1,1 @@
-An experimental Opal/Ruby port of the first WebGL demos at http://learningwebgl.com/lessons that uses a hypothetical Ruby-style WebGL wrapper.
+An experimental Opal/Ruby port of the first WebGL demos at http://learningwebgl.com/lessons that uses a hypothetical Ruby-style WebGL wrapper. The translation helped me understand WebGL, but after some point I realized that a consistent Ruby-style port of WebGL is not feasible and is of dubious practicality. However, designing a Ruby-style GPU API from the ground up is something worth exploring.
